@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
-//On button click
+
+//Function to generate password based on user input
  function generatePassword() {
 	//Get the length of the password from user input
 	var getLength = prompt('How many characters would you like your password to be? Pick a number between 8 and 128.');
@@ -24,15 +25,12 @@ var generateBtn = document.querySelector('#generate');
 		if (lowerCase) {
 			passwordStr = passwordStr + letterLArray[Math.floor(Math.random() * letterLArray.length)];
 			bigArray = bigArray + letterLArray;
-			console.log(bigArray);
 		}
 		if (upperCase) {
 			passwordStr = passwordStr + letterUArray[Math.floor(Math.random() * letterUArray.length)];
       bigArray = bigArray + letterUArray;
-      console.log(bigArray);
 		}
 		if (numbers) {
-			// get 1 random charter from numbers
 			passwordStr = passwordStr + numberArray[Math.floor(Math.random() * numberArray.length)];
 			bigArray = bigArray + numberArray;
 		}
@@ -40,17 +38,11 @@ var generateBtn = document.querySelector('#generate');
 			passwordStr = passwordStr + specialArray[Math.floor(Math.random() * specialArray.length)];
 			bigArray = bigArray + specialArray;
 		}
-
-		//  total = getLength - password.length
-
-		console.log(bigArray);
-		console.log(passwordStr);
-
+    //Loop through array of all possible characters and return a randomized output meeting the length of the user's input
     var total = getLength - passwordStr.length
     for (var i = 0; i < total; i++) {
 			passwordStr = passwordStr + bigArray[Math.floor(Math.random() * bigArray.length)];
     }
-    console.log(passwordStr);
     return passwordStr
 	}
 };
@@ -58,13 +50,9 @@ var generateBtn = document.querySelector('#generate');
 //Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  console.log(password);
 	var passwordText = document.querySelector('#password');
-
-//	passwordText();
 
   passwordText.value = password;
 }
-
 // Add event listener to generate button
  generateBtn.addEventListener("click", writePassword);
