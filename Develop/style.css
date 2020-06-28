@@ -44,10 +44,21 @@ header {
 
 .card-header::after {
   content: " ";
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+}
+
+.header1 {
+  float:left;
+  align-self: center;
+}
+.header2 {
+  float: right;
+  align-self: center;
 }
 
 .card-body {
@@ -101,6 +112,29 @@ header {
 	top:1px;
 }
 
+.copyButton {
+	background:linear-gradient(to bottom, #af0808 5%, #944444 100%);
+	background-color:#af0808;
+  border-radius:28px;
+  border:none;
+  outline: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:12px 20px;
+  text-decoration:none;
+}
+.copyButton:hover {
+	background:linear-gradient(to bottom, #944444 5%, #af0808 100%);
+	background-color:#944444;
+}
+.copyButton:active {
+	position:relative;
+	top:1px;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -126,6 +160,7 @@ button[disabled] {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px dashed #c0c7cf;
+  outline: none;
   border-radius: 6px;
   resize: none;
   overflow: hidden;

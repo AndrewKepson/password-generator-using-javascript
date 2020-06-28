@@ -50,9 +50,20 @@ var generateBtn = document.querySelector('#generate');
 //Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-	var passwordText = document.querySelector('#password');
+	var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 // Add event listener to generate button
  generateBtn.addEventListener("click", writePassword);
+
+//Copy Password to Clipboard
+
+ function copyPassword() {
+   var copyPass = document.querySelector("#password");
+
+  copyPass.select();
+  document.execCommand("copy");
+ }
+
+ document.querySelector("#copyButton").addEventListener("click", copyPassword);
