@@ -73,19 +73,32 @@ header {
 }
 
 .btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
+  background:linear-gradient(to bottom, #af0808 5%, #944444 100%);
+  background-color:#af0808;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
+  border-radius:28px;
+  border: none;
+  outline: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+  font-size:21px;
   margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+	padding:16px 39px;
+  text-decoration:none;
   text-align: center;
-  cursor: pointer;
+}
+
+.btn:hover {
+  background:linear-gradient(to bottom, #944444 5%, #af0808 100%);
+	background-color:#944444;
+}
+
+.btn:active {
+  position:relative;
+	top:1px;
 }
 
 button[disabled] {
